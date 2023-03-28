@@ -1,0 +1,9 @@
+.home {
+    background-image: url('./anirudh-Xu4Pz7GI9JY-unsplash.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+  
+}

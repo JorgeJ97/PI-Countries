@@ -1,0 +1,47 @@
+/* .landing {
+    background-image: url('../../components/anirudh-Xu4Pz7GI9JY-unsplash.jpg'); 
+     background-size: contain; 
+     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+      
+}
+  */
+  html, body {
+    
+    margin: 0;
+    padding: 0;
+}
+.landing{
+    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+}
+
+.landing button {
+    background-color: #4d6277;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.landing button:hover {
+    background-color: #3b3737;
+
+  }
+
+.landing h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 48px;
+    text-align: center;
+
+}

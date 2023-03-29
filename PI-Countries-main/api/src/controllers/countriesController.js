@@ -30,8 +30,8 @@ const getAllCountries = async(name) =>{
     let allCountries = await Country.findAll()
     if(!allCountries.length) allCountries = await saveAll()
     const filterCountries = allCountries.filter(country => country.name.toLowerCase().includes(name.toLowerCase()))
-    if(!filterCountries.length) throw Error('Results not found')
-    else return filterCountries;
+    // if(!filterCountries.length) throw Error('Results not found')
+    return filterCountries;
     // const filterCountries = await Country.findAll({
     //     where: { name: { [Op.iLike]: `%${name}%` } },
     //   })

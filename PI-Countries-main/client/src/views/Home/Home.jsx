@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import styles from './Home.module.css';
 import CardsContainer from "../../components/CardsContainer/CardsContainer"
 import Paginado from "../../components/Paginado/Paginado"
-import SearchBar from "../../components/SearchBar/SearchBar"
+// import SearchBar from "../../components/SearchBar/SearchBar"
 import { alphabeticalOrder, filterByContinent,  getCountries, orderedByPopulation, getActivities, getCountriesByActivities } from "../../redux/actions"
 
 

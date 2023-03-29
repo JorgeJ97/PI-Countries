@@ -12,6 +12,7 @@
     min-height: 350px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
 }
 
 .card:hover {

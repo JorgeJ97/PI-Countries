@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import {getCountriesByName} from '../../redux/actions';
 import style from './SearchBar.module.css';
@@ -9,12 +9,17 @@ const SearchBar = ({handlePageChange}) => {
     const dispatch = useDispatch();
     const [name, setName]= useState('')
 
+    useEffect(() => {
+        dispatch(getCountriesByName(name));
+      }, [name]);
+
     
 
     const handleInputChange = (event) => {
+        
         setName(event.target.value)
         dispatch(getCountriesByName(event.target.value))
-        handlePageChange(1)
+        // handlePageChange(1)
 
     }
 
@@ -30,7 +35,7 @@ const SearchBar = ({handlePageChange}) => {
             <input 
             type = 'text' placeholder="Search countries" 
             value={name} 
-            onChange = {(event) => handleInputChange(event)}
+            onChange = {handleInputChange}
             />
         </div>
     )

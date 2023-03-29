@@ -45,7 +45,7 @@ export const getCountry = (id) => {
 
 export const getCountriesByName = (name)=> {
     return async function (dispatch) {
-        const filteredCountries = await (await axios.get(`http://localhost:3001/countries?name=${name}`)).data
+        let filteredCountries = await (await axios.get(`http://localhost:3001/countries?name=${name}`)).data
         
         dispatch({type: GET_COUNTRIES_BY_NAME, payload: filteredCountries})
     }

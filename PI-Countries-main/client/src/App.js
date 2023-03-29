@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="home">
       
-      {location.pathname !== '/' && <NavBar handlePageChange={handlePageChange} currentPage={currentPage} countriesPerPage={countriesPerPage}
+      {location.pathname !== '/' && <NavBar handlePageChange={handlePageChange}  
       lastIndex={lastIndex} firstIndex={firstIndex}/>}
       <Route  exact path = '/' render = {() => <Landing /> } />
       <Route path = '/home' render = {() => <Home handlePageChange={handlePageChange} currentPage={currentPage} countriesPerPage={countriesPerPage}

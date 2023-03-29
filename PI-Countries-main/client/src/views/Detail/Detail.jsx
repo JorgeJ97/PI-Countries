@@ -25,38 +25,48 @@ export const Detail = () => {
             <img src={country.flag} alt={country.id} className={styles.image}/>
             <h3 className={styles.title}>{country.name}</h3>
             <h3 className={styles.title}> Continent: {country.region}</h3>
+            <h3 className={styles.title}> Population: {country.population} hab.</h3>
+            <h3 className={styles.title}> Area: {country.area}  km²</h3>
+            <h3 className={styles.title}> Subregion: {country.subregion}</h3>
 
             <div>
                 <h3 className={styles.title}>
 
                 Capital: {country.capital?.map(cap => {
                 return (
-                    <p className= {styles.info} key= {cap}>{cap}</p>
+                    <h3 className= {styles.title} key= {cap}>{cap}</h3>
                 )
             })}
                 </h3>
 
             </div>
 
-           
             <h3 className={styles.title}>
-                Activities:
-                
-           {country.activities?.map(act => {
-                return (
-                    <div>
-                        <h3 className={styles.title} key= {act.id}>{act.name}:
-                        
-                        </h3>
-                        <p className= {styles.info}>Difficulty: {act.difficulty}</p>
-                        <p className= {styles.info}>Season: {act.season}</p>
-
-                    </div>
-                    
-
-                )
-            })}
+            Activities:
+                <table className={styles.table}>
+                    <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Difficulty</th>
+                                <th>Season</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {country.activities?.map(act => {
+                            return (
+                                    <tr key={act.id}>
+                                        <td>{act.name}</td>
+                                        <td>{act.difficulty}</td>
+                                        <td>{act.season}</td>
+                                    </tr>
+        )
+                        })}
+                    </tbody>
+                </table>
             </h3>
+
+           
+         
                         
 
            

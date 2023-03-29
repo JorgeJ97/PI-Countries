@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
-export const GET_COUNTRIES_BY_ACTIVITIES = 'GET_COUNTRIES_BY_ACTIVITIES' 
+export const FILTER_BY_ACTIVITIES = 'FILTER_BY_ACTIVITIES' 
 export const GET_COUNTRY_BY_ID = 'GET_COUNTRY_BY_ID';
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME';
 export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT'
@@ -30,8 +30,8 @@ export const getActivities = () => {
     }
 }
 
-export const getCountriesByActivities = (activity) => {
-    return { type: GET_COUNTRIES_BY_ACTIVITIES, payload: activity}
+export const filterByActivities = (activity) => {
+    return { type: FILTER_BY_ACTIVITIES, payload: activity}
    
 }
 

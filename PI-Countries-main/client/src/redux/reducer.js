@@ -1,4 +1,4 @@
-import {  FILTER_BY_CONTINENT, ORDERED_BY_POPULATION, GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_COUNTRY_BY_ID, ALPHABETICAL_ORDER, GET_ACTIVITIES, GET_COUNTRIES_BY_ACTIVITIES } from "./actions";
+import {  FILTER_BY_CONTINENT, ORDERED_BY_POPULATION, GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_COUNTRY_BY_ID, ALPHABETICAL_ORDER, GET_ACTIVITIES, FILTER_BY_ACTIVITIES } from "./actions";
 
 
 
@@ -15,7 +15,7 @@ const reducer = (state = initialState, action)=>{
 
     switch(action.type){
 
-        case GET_COUNTRIES_BY_ACTIVITIES:
+        case FILTER_BY_ACTIVITIES:
             if(action.payload === 'All') return {...state, countries: state.allCountries}
             const filteredActivities = state.activities.find(activity => activity.name === action.payload)
             const filterCountries = filteredActivities.countries
@@ -67,7 +67,7 @@ const reducer = (state = initialState, action)=>{
         case FILTER_BY_CONTINENT:
             if(action.payload === "") return {...state, countries: state.countries}
             const allCountries = state.allCountries
-            const filteredCountries =  action.payload === 'All' ? allCountries : allCountries.filter(country => country.region === action.payload)
+            const filteredCountries =  action.payload === 'All' ? allCountries : state.countries.filter(country => country.region === action.payload)
             return {...state, countries: filteredCountries }
 
         case GET_COUNTRIES_BY_NAME:

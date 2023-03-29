@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import styles from './Home.module.css';
 import CardsContainer from "../../components/CardsContainer/CardsContainer"
 import Paginado from "../../components/Paginado/Paginado"
 // import SearchBar from "../../components/SearchBar/SearchBar"
-import { alphabeticalOrder, filterByContinent,  getCountries, orderedByPopulation, getActivities, getCountriesByActivities } from "../../redux/actions"
+import { alphabeticalOrder, filterByContinent,  getCountries, orderedByPopulation, getActivities, filterByActivities } from "../../redux/actions"
 
 
 
@@ -37,7 +37,7 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage}
     }
 
     const handleActivity = (event) => {
-        dispatch(getCountriesByActivities(event.target.value))
+        dispatch(filterByActivities(event.target.value))
         setOrder(event.target.value)
         handlePageChange(1)
     }

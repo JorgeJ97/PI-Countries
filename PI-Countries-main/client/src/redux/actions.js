@@ -30,17 +30,13 @@ export const getActivities = () => {
     }
 }
 
-export const filterByActivities = (activity) => {
-    return { type: FILTER_BY_ACTIVITIES, payload: activity}
-   
-}
 
 export const getCountry = (id) => {
     return async function (dispatch) {
         const country = await (await axios.get(`http://localhost:3001/countries/${id}`)).data
         dispatch({type: GET_COUNTRY_BY_ID, payload: country})
     }
-
+    
 }
 
 export const getCountriesByName = (name)=> {
@@ -49,6 +45,10 @@ export const getCountriesByName = (name)=> {
         
         dispatch({type: GET_COUNTRIES_BY_NAME, payload: filteredCountries})
     }
+}
+export const filterByActivities = (activity) => {
+    return { type: FILTER_BY_ACTIVITIES, payload: activity}
+   
 }
 
 export const filterByContinent = (continent) =>{

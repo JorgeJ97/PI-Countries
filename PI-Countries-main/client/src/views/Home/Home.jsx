@@ -19,6 +19,8 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage}
     const currentCountries = countries.slice(firstIndex, lastIndex)
 
    
+
+
     const handleFilterContinent = (event) => {
         dispatch(filterByContinent(event.target.value))
         handlePageChange(1)

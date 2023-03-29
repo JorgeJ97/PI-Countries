@@ -67,7 +67,7 @@ const reducer = (state = initialState, action)=>{
         case FILTER_BY_CONTINENT:
             if(action.payload === "") return {...state, countries: state.countries}
             const allCountries = state.allCountries
-            const filteredCountries =  action.payload === 'All' ? allCountries : state.countries.filter(country => country.region === action.payload)
+            const filteredCountries =  action.payload === 'All' ? allCountries : allCountries.filter(country => country.region === action.payload)
             return {...state, countries: filteredCountries }
 
         case GET_COUNTRIES_BY_NAME:

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { getCountries } from "../../redux/actions"
 import axios from 'axios';
@@ -6,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import style from "./Form.module.css";
 
 const regexDifficulty = /^[1-5]$/
-const regexName = /^[a-zA-Z]{3,50}$/
+const regexName = /^[a-zA-Z][a-zA-Z\s]{1,48}[a-zA-Z]$/
 const regexDuration = /^[a-zA-Z0-9][\w\d:. ]{1,48}[a-zA-Z0-9]$/
 
 export const Form = () => {
@@ -56,6 +57,7 @@ export const Form = () => {
                 errors.difficulty = 'Must be an integer between 1 and 5'
             }
         }
+        if(form.season) errors.season = ''
         
         if(form.season === '') errors.season = 'Select an option'
 
@@ -95,6 +97,8 @@ export const Form = () => {
             })
             setErrors(validate({...form, countriesId: [...form.countriesId, event.target.value]}))
         }
+        else setErrors(validate(form))
+        
     }
 
     const checkboxHandler = (event) =>{
@@ -105,6 +109,11 @@ export const Form = () => {
                 ...form,
                 season: ''
             })
+            setErrors(validate({
+                ...form,
+                season: ''
+
+            }))
             
         }
         if(event.target.checked){
@@ -114,15 +123,14 @@ export const Form = () => {
                 ...form,
                 season: value
         })
-    }
-        
-       
+        }
+        // else s   
     }
     const submitHandler = (event) => {
         event.preventDefault()
-        console.log(form)
-        if(!form.difficulty) setErrors({...errors, difficulty: 'Must be an integer between 1 and 5'})
-        if(form.season === '') setErrors({...errors, season: 'Select an option'}) 
+        // console.log(form)
+        if(form.difficulty === '') setErrors({...errors, difficulty: 'Must be an integer between 1 and 5'})
+        if(form.duration === '') setErrors({...errors, duration: 'Need a duration'})
         if(!form.countriesId.length) setErrors({...errors, countriesId: 'Selected almost an option'})
         if(form.name === '' || form.difficulty ==='' || form.duration === '' || form.season === ''|| form.countriesId.length === 0){
             return alert('there are invalid or incomplete fields, fill them correctly please')
@@ -141,7 +149,7 @@ export const Form = () => {
             season: '',
             countriesId: [],
             })
-            history.push('/home')
+            // history.push('/home')
         }
         
     }
@@ -155,6 +163,9 @@ export const Form = () => {
     return(
         <div className={style.form}>
         <form  onSubmit={(event) => submitHandler(event)}>
+            <Link to='/home'>
+            <button>Back to home</button>
+            </Link>
             <div>
                 <label>Name: </label>
                 <input type='text' value={form.name} name='name' onChange={(event) => changeHandler(event)} />

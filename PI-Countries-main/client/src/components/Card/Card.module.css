@@ -1,11 +1,12 @@
 .card {
+  color: aliceblue;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background-color: rgb(131, 121, 121);
+    background-color: rgba(179, 173, 172, 0.041);
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -18,6 +19,7 @@
 .card:hover {
     transform: translateY(-5px);
     background-color: #c4bbbb;
+    color: black;
   }
 
 .img {

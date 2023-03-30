@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {getCountry} from "../../redux/actions"
 import { useParams} from "react-router-dom"
+import { Link } from "react-router-dom"
 import styles from './Detail.module.css';
 
 
@@ -20,6 +21,12 @@ export const Detail = () => {
 
     return(
         <>
+
+        <div className={styles.container}>
+            <Link to='/home'>
+            <button >Back</button>
+            </Link>
+        </div>
         <div className={styles.detail}>
             <h3 className={styles.title}>{country.id}</h3>
             <img src={country.flag} alt={country.id} className={styles.image}/>
@@ -44,20 +51,20 @@ export const Detail = () => {
             <h3 className={styles.title}>
             Activities:
                 <table className={styles.table}>
-                    <thead>
+                    <thead >
                             <tr>
-                                <th>Name</th>
-                                <th>Difficulty</th>
-                                <th>Season</th>
+                                <th className={styles.th}>Name</th>
+                                <th className={styles.th}>Difficulty</th>
+                                <th className={styles.th}>Season</th>
                             </tr>
                     </thead>
                     <tbody>
                         {country.activities?.map(act => {
                             return (
-                                    <tr key={act.id}>
-                                        <td>{act.name}</td>
-                                        <td>{act.difficulty}</td>
-                                        <td>{act.season}</td>
+                                    <tr key={act.id} className={styles.tr}>
+                                        <td className={styles.th}>{act.name}</td>
+                                        <td className={styles.th}>{act.difficulty}</td>
+                                        <td className={styles.th}>{act.season}</td>
                                     </tr>
         )
                         })}

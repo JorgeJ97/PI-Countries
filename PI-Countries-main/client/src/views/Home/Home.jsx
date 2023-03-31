@@ -10,7 +10,7 @@ import { alphabeticalOrder, filterByContinent,  getCountries, orderedByPopulatio
 
 
 
-export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage}) => {
+export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage, currentPage}) => {
     const dispatch = useDispatch()
     const [order, setOrder] = useState('')
     const countries = useSelector(state => state.countries)
@@ -91,7 +91,7 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage}
 
         {/* <SearchBar handlePageChange={handlePageChange}/> */}
         <CardsContainer currentCountries={currentCountries}/>
-        <Paginado size = {size} handlePageChange = {handlePageChange} />
+        <Paginado currentPage = {currentPage} size = {size} handlePageChange = {handlePageChange} />
         </div>
        
     )

@@ -1,7 +1,11 @@
+const { json } = require('sequelize')
 const { getActivities, createActivity} = require('../controllers/activitiesController')
 
 
-const getActivitiesHandler = async(req, res) =>{
+const getActivitiesHandler = async  (req, res) =>{
+    // getActivities()
+    // .then(response => res.status(json(res)))
+    // .catch(res => res.status(400).json(res))
     try {
         const response = await getActivities()
         res.status(200).json(response)

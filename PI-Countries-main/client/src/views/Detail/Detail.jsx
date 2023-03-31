@@ -53,7 +53,7 @@ export const Detail = () => {
                 <table className={styles.table}>
                     <thead >
                             <tr>
-                                <th className={styles.th}>Name</th>
+                                <th className={styles.th}>Type of Activity</th>
                                 <th className={styles.th}>Difficulty</th>
                                 <th className={styles.th}>Season</th>
                             </tr>
@@ -62,9 +62,9 @@ export const Detail = () => {
                         {country.activities?.map(act => {
                             return (
                                     <tr key={act.id} className={styles.tr}>
-                                        <td className={styles.th}>{act.name}</td>
-                                        <td className={styles.th}>{act.difficulty}</td>
-                                        <td className={styles.th}>{act.season}</td>
+                                        <td className={styles.td}>{act.name}</td>
+                                        <td className={styles.td}>{act.difficulty}</td>
+                                        <td className={styles.td}>{act.season}</td>
                                     </tr>
         )
                         })}

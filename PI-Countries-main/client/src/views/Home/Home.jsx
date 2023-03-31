@@ -71,7 +71,7 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage}
                 <option value="Asia">Asia</option>
                 <option value="Europe">Europa</option>
                 <option value="Oceania">Oceania</option>
-                <option value="Antarctic">Antartida</option>
+                <option value="Antarctic">Antarctic</option>
             </select>
             <select onChange={ event => handleOrderPopulation(event)} className={styles.select}>
                 <option value="">-select-</option>

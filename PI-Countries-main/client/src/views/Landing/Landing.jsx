@@ -6,9 +6,10 @@ import styles from './Landing.module.css';
 export const Landing = () => {
     return(
         <div className={styles.landing}>
-            <h1> Bienvenido! </h1>
+            <h1> Welcome! </h1>
+            <h3>Individual proyect by Jorge Jimenez</h3>
             <Link to = '/home'>
-            <button>Ingresar</button>
+            <button>Login</button>
             </Link>
 
         </div>

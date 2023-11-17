@@ -1,9 +1,20 @@
 .searchBar {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    display: flex; 
+    /* padding: 5px; */
+    /* border-radius: 5px; */
+    /* border: 1px solid #ccc; */
     /* width: 100%; */
-    /* box-sizing: border-box; */
-    /* margin-bottom: 20px; */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .searchBarInput {
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    
+    
+
+
   }

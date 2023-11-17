@@ -58,6 +58,8 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage,
     return(
         
         <div >
+            <div className={styles.selectContainer}>
+
             <select className={styles.select} onChange={event => handleAlphabeticalOrder(event)}>
                 <option value="">-select-</option>
                 <option value="A-Z">A-Z</option>
@@ -88,6 +90,7 @@ export const Home = ({handlePageChange, firstIndex, lastIndex, countriesPerPage,
                     )
                 })}
             </select>
+            </div>
 
         {/* <SearchBar handlePageChange={handlePageChange}/> */}
         <CardsContainer currentCountries={currentCountries}/>

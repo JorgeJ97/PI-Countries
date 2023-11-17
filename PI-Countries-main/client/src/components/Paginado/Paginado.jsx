@@ -2,7 +2,7 @@ import styles from './Paginado.module.css';
 
 const Paginado = ({handlePageChange, size, currentPage}) =>{
     const pageNumers = [];
-    console.log(currentPage)
+    // console.log(currentPage)
 
     for(let i=1; i<= Math.ceil(size); i++){
         pageNumers.push(i)

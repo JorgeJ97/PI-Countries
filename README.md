@@ -2,7 +2,7 @@
 Personal Proyect, Henry Countries
 Este es mi proyecto individual de Henry, el cual está creado usando React, Redux, Express, PostgreSQL y Sequelize
 
-<img src="../countries.png" />
+<img src="./PI-Countries-main/countries.png" />
 
 
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)

@@ -20,7 +20,7 @@ export const Detail = () => {
 
 
     return(
-        <>
+        <div className={styles.detailContainer}>
 
         <div className={styles.container}>
             <Link to='/home'>
@@ -83,7 +83,7 @@ export const Detail = () => {
 
             
         </div>
-        </>
+        </div>
     )
 }
 
